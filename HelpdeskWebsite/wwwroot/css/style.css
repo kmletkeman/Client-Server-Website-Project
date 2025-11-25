@@ -1,0 +1,106 @@
+﻿body {
+    font-family: 'Cascadia Code';
+}
+
+#status {
+    background-color: #3c3c3c;
+    font-size: large;
+    color: #ebdbb2;
+}
+
+#heading {
+    background-color: #282828;
+    font-size: large;
+    color: #ebdbb2;
+}
+
+#theModal .modal-content {
+    background-color: #282828;
+    font-size: large;
+    color: #ebdbb2;
+}
+
+#theModal .btn-close {
+    filter: invert(1);
+    position: absolute; /* Keep Bootstrap's default absolute positioning */
+    top: 1rem; /* Bootstrap default padding */
+    right: 1rem; /* Bootstrap default padding */
+}
+
+#theModal .modal-header {
+    border-bottom: none; /* Remove the bottom border */
+}
+
+#theModal .modal-header .d-flex img {
+    margin-top: 30px; /* Adjust this value to move the logo down (e.g., 5px, 15px) */
+}
+
+#actionbutton {
+    background-color: #3c3c3c;
+    font-size: large;
+    color: #ebdbb2;
+}
+
+.card {
+    background-color: #3c3c3c;
+    font-size: large;
+    color: #ebdbb2;
+}
+
+.form-control {
+    background-color: #282828;
+    font-size: large;
+    color: #ebdbb2;
+}
+
+.form-control:focus {
+    background-color: #282828;
+    font-size: large;
+    color: #ebdbb2;
+}
+
+button.list-group-item {
+    background-color: #282828;
+    color: #ebdbb2;
+}
+
+div.error {
+    color: #ebdbb2;
+    background-color: #282828;
+    padding: .25em .4em;
+    font-size: 75%;
+    font-weight: 700;
+    line-height: 1;
+    left: 200px;
+    white-space: nowrap;
+    vertical-align: baseline;
+}
+
+#validstatus {
+    color: #dc3545; /* red */
+    background-color: #3c3c3c !important;
+    border-radius: 0rem;
+}
+
+#validstatus.bg-success {
+    color: green;
+    background-color: #3c3c3c !important;
+}
+
+#deletedialog {
+    background: linear-gradient(135deg, #440000, #880000);
+    color: #ebdbb2;
+    border: 2px solid #ff4444;
+    box-shadow: 0 8px 25px rgba(255,0,0,0.4);
+}
+
+#yesbutton {
+    background-color: #ff2222;
+    color: #ebdbb2;
+    border: none;
+}
+
+#nobutton {
+    background-color: #444;
+    color: #ebdbb2;
+}

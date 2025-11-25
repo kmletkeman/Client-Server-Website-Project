@@ -1,0 +1,28 @@
+# This file itself must stay LF
+.gitattributes          text eol=lf
+
+# Your own source files → always LF (cross-platform best practice)
+*.js                    text eol=lf
+*.ts                    text eol=lf
+*.css                   text eol=lf
+*.scss                  text eol=lf
+*.html                  text eol=lf
+*.cshtml                text eol=lf
+*.json                  text eol=lf
+*.yml                   text eol=lf
+*.yaml                  text eol=lf
+*.md                    text eol=lf
+
+# Third-party libraries and minified files → never touch line endings
+wwwroot/lib/**          binary
+*.min.js                binary
+*.min.css               binary
+bootstrap*.js           binary
+bootstrap*.css          binary
+jquery*.js              binary
+
+# Windows-specific files → keep CRLF so Visual Studio is happy
+*.cs                    text eol=crlf
+*.csproj                text eol=crlf
+*.sln                   text eol=crlf
+*.config                text eol=crlf

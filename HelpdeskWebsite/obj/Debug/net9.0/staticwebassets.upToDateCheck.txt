@@ -1,0 +1,17 @@
+C:\SCHOOL\Projects\INFO-3070\Casestudy\HelpdeskWebsite\wwwroot\lib\js\jquery.validate.min.js
+C:\SCHOOL\Projects\INFO-3070\Casestudy\HelpdeskWebsite\wwwroot\js\employee.js
+C:\SCHOOL\Projects\INFO-3070\Casestudy\HelpdeskWebsite\wwwroot\css\style.css
+C:\SCHOOL\Projects\INFO-3070\Casestudy\HelpdeskWebsite\wwwroot\lib\js\jquery.min.js
+C:\SCHOOL\Projects\INFO-3070\Casestudy\HelpdeskWebsite\wwwroot\lib\js\bootstrap.min.js
+C:\SCHOOL\Projects\INFO-3070\Casestudy\HelpdeskWebsite\wwwroot\employee.html
+C:\SCHOOL\Projects\INFO-3070\Casestudy\HelpdeskWebsite\wwwroot\lib\css\bootstrap.min.css
+C:\SCHOOL\Projects\INFO-3070\Casestudy\HelpdeskWebsite\wwwroot\home.html
+wwwroot\css\style.css
+wwwroot\employee.html
+wwwroot\home.html
+wwwroot\img\logo.png
+wwwroot\js\employee.js
+wwwroot\lib\css\bootstrap.min.css
+wwwroot\lib\js\bootstrap.min.js
+wwwroot\lib\js\jquery.min.js
+wwwroot\lib\js\jquery.validate.min.js

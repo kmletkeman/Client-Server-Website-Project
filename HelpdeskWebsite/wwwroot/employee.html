@@ -1,0 +1,129 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>Case 1 - Home</title>
+	<meta charset="utf-8" />
+	<link rel="icon" href="data:;base64,iVBORw0KGgo=">
+	<link href="/lib/css/bootstrap.min.css" rel="stylesheet" />
+	<link href="css/style.css" rel="stylesheet" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body style="background-color: #ebdbb2;">
+    <nav class="navbar navbar-expand-md navbar-dark" style="background-color: #282828;">
+        <a class="navbar-brand mx-3" href="#" style="color: #ebdbb2;">Case #1</a>
+        <button class="navbar-toggler mx-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarContent">
+            <ul class="navbar-nav me-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/home.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="/employee.html">Employee</a>
+                </li>
+            </ul>
+            <form>
+                <input class="form-control" type="search" placeholder="Search" id="srch" aria-label="Search" style="width:10vw;margin-right:5vw;">
+            </form>
+        </div>
+    </nav>
+    <div class="text-center mt-5">
+        <img src="/img/logo.png" alt="Company Logo" class="img-fluid" style="max-width: 100px;" />
+        <h2 class="mt-3">Employees</h2>
+        <p class="mt-1">Help Desk v1.0</p>
+    </div>
+    <div class="justify-content-center align-items-center row mt-5 ml-1">
+        <div class="list-group col-10" id="employeeList" style="height:45vh;"></div>
+    </div>
+    <!-- This <div> contains the modal markup -->
+    <form id="EmployeeModalForm" name="EmployeeModalForm">
+        <div class="modal fade" id="theModal" data-bs-backdrop="static"
+             data-bs-keyboard="false" tabindex="-1" aria-labelledby="theModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <div class="d-flex justify-content-center w-100">
+                            <img src="/img/logo.png" alt="Company Logo" class="img-fluid" style="max-width: 80px;" />
+                        </div>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="mx-2 my-2">
+                            <div class="card">
+                                <div class="card-header text-center" id="modalstatus">Employee Information</div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-4">Title:</div>
+                                        <div class="col-8">
+                                            <input type="text"
+                                                   placeholder="enter title"
+                                                   id="TextBoxTitle"
+                                                   name="TextBoxTitle"
+                                                   class="form-control" />
+                                        </div>
+                                        <div class="col-4">First:</div>
+                                        <div class="col-8">
+                                            <input type="text"
+                                                   placeholder="enter first name"
+                                                   id="TextBoxFirst"
+                                                   name="TextBoxFirst"
+                                                   class="form-control" />
+                                        </div>
+                                        <div class="col-4">Surname:</div>
+                                        <div class="col-8">
+                                            <input type="text"
+                                                   placeholder="enter last name"
+                                                   id="TextBoxSurname"
+                                                   name="TextBoxSurname"
+                                                   class="form-control" />
+                                        </div>
+                                        <div class="col-4">Email:</div>
+                                        <div class="col-8">
+                                            <input type="text"
+                                                   placeholder="enter email"
+                                                   id="TextBoxEmail"
+                                                   name="TextBoxEmail"
+                                                   class="form-control" />
+                                        </div>
+                                        <div class="col-4">Phone Number:</div>
+                                        <div class="col-8">
+                                            <input type="text"
+                                                   placeholder="enter phone number"
+                                                   id="TextBoxPhone"
+                                                   name="TextBoxPhone"
+                                                   class="form-control" />
+                                        </div>
+                                        <div class="col-4">Department:</div>
+                                        <div class="col-8">
+                                            <select id="ddlDepartments" name="ddlDepartments" class="form-control">
+                                                <option value="">-- Select Department --</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-footer text-center">
+                                <div class="row justify-content-center">
+                                    <input type="button" value="Update" id="actionbutton" class="col-auto m-2 px-4" />
+                                    <input type="button" value="Delete" id="deletebutton" class="col-auto m-2 px-4" />
+                                </div>
+                                <div id="validstatus" class="text-left mt-3 mb-2"></div>
+                                <div class="alert alert-danger fade show" role="alert" id="deletedialog" style="display:none;width:80%;margin-top:2vh;margin-left:10%;">
+                                    <strong>Delete Employee?</strong><p></p>
+                                    <input type="button" class="btn btn-secondary mt-3" value="yes" id="yesbutton" />
+                                    <input type="button" class="btn btn-secondary mt-3" value="No" id="nobutton" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    <script src="/lib/js/jquery.min.js"></script>
+    <script src="lib/js/jquery.validate.min.js"></script>
+    <script src="/lib/js/bootstrap.min.js"></script>
+    <script src="/js/employee.js"></script>
+</body>
+</html>
