@@ -87,6 +87,9 @@
         $("#TextBoxEmail").val("");
         $("#TextBoxPhone").val("");
         sessionStorage.removeItem("employee");
+        $("#uploadstatus").text("");
+        $("#imageHolder").html("");
+        $("#uploader").val("");
         $("#theModal").modal("toggle");
         let validator = $("#EmployeeModalForm").validate();
         validator.resetForm();
@@ -114,11 +117,12 @@
                 $("#TextBoxSurname").val(employee.lastname);
                 $("#TextBoxEmail").val(employee.email);
                 $("#TextBoxPhone").val(employee.phoneno);
+                loadDepartmentDDL(employee.departmentId);
+                $("#imageHolder").html(`<img height="120" width="110" src="data:img/png;base64,${employee.staffPicture64}" />`);
                 sessionStorage.setItem("employee", JSON.stringify(employee));
                 $("#modalstatus").text("Update Employee Data");
                 $("#theModal").modal("toggle");
                 $("#theModalLabel").text("Update");
-                loadDepartmentDDL(employee.departmentId);
             } // if
         }); // data.forEach
     }; // setupForUpdate method
@@ -184,7 +188,7 @@
             emp.departmentId = parseInt($("#ddlDepartments").val()); // hard code it for now, we"ll add a dropdown later
             emp.id = -1;
             emp.timer = null;
-            emp.staffpicture64 = null;
+            emp.staffpicture64 = JSON.parse(sessionStorage.getItem("employee") || '{}').staffpicture64 || null;
             // send the employee info to the server asynchronously using POST
             let response = await fetch("api/employee", {
                 method: "POST",
@@ -281,6 +285,27 @@
         let filtereddata = alldata.filter((emp) => emp.lastname.match(new RegExp($("#srch").val(), 'i')));
         buildEmployeeList(filtereddata, false);
     }); // srch keyup
+
+    $("input:file").on("change", () => {
+        try {
+            const reader = new FileReader();
+            const file = $("#uploader")[0].files[0];
+            $("#uploadstatus").text("");
+            file ? reader.readAsBinaryString(file) : null;
+            reader.onload = (readerEvt) => {
+                // get binary data then convert to encoded string
+                const binaryString = reader.result;
+                const encodedString = btoa(binaryString);
+                // replace the picture in session storage
+                let employee = JSON.parse(sessionStorage.getItem("employee") || '{}');
+                employee.staffpicture64 = encodedString;
+                sessionStorage.setItem("employee", JSON.stringify(employee));
+                $("#uploadstatus").text("retrieved local pic")
+            };
+        } catch (error) {
+            $("#uploadstatus").text("pic upload failed")
+        }
+    }); // input file change
 
     $("#actionbutton").on("click", () => {
         $("#actionbutton").val().toLowerCase() === "update" ? update() : add();

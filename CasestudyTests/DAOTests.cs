@@ -111,4 +111,13 @@ public class DAOTests
         Employee? selectedEmployee = await dao.GetByEmail("kl@abc.com");
         Assert.True(await dao.Delete(selectedEmployee.Id!) == 1); // 1 indicates the # of rows updated
     }
+
+    [Fact]
+    public async Task Employee_LoadPicsTest()
+    {
+        {
+            PicsUtility util = new();
+            Assert.True(await util.AddEmployeePicsToDb());
+        }
+    }
 }

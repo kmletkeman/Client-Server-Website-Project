@@ -100,10 +100,19 @@
                                                 <option value="">-- Select Department --</option>
                                             </select>
                                         </div>
+                                        <div class="row mt-3">
+                                            <div class="col-4">Picture:</div>
+                                            <div class="col-8" id="imageHolder"></div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="card-footer text-center">
+                                <div class="row border m-2 p-2">
+                                    <label for="file">Choose Different Picture?</label>
+                                    <input type="file" id="uploader" class="text-center btn btn-outline-secondary" />
+                                    <div id="uploadstatus" class="text-left"></div>
+                                </div>
                                 <div class="row justify-content-center">
                                     <input type="button" value="Update" id="actionbutton" class="col-auto m-2 px-4" />
                                     <input type="button" value="Delete" id="deletebutton" class="col-auto m-2 px-4" />

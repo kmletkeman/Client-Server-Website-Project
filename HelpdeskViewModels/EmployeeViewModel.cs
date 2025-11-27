@@ -152,7 +152,8 @@ public class EmployeeViewModel
                     DepartmentId = emp.DepartmentId,
                     DepartmentName = emp.Department.DepartmentName,
                     // binary value needs to be stored on client as base64
-                    Timer = Convert.ToBase64String(emp.Timer!)
+                    Timer = Convert.ToBase64String(emp.Timer!),
+                    StaffPicture64 = emp.StaffPicture != null ? Convert.ToBase64String(emp.StaffPicture) : null
                 };
                 allVms.Add(empVm);
             }
